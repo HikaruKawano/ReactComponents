@@ -14,6 +14,7 @@ interface props {
   flexDirection?: string;
   borderRadius?: string;
   margin?: string;
+  opacity?: string;
 
   resMargin?: string;
   resWidth?: string;
@@ -38,6 +39,7 @@ const Container: React.FC<props> = ({
   flexDirection,
   borderRadius,
   margin,
+  opacity,
 
   resAlign,
   resHeight,
@@ -61,6 +63,7 @@ const Container: React.FC<props> = ({
       flexDirection={flexDirection}
       borderRadius={borderRadius}
       margin={margin}
+      opacity={opacity}
 
       resAlign={resAlign}
       resHeight={resHeight}
