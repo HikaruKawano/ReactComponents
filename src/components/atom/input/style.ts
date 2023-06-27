@@ -16,6 +16,7 @@ export const StyledInputContainer = styled.div<props>`
 
 export const StyleInput = styled.input<props>`
 
+&.inputSimple{
     font-family: inherit;
     width: 100%;
     border: 0;
@@ -39,28 +40,51 @@ export const StyleInput = styled.input<props>`
     border-image-slice: 1;
     }
 
-    &:focus ~ .form__label {
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #11998e;
-    font-weight: 700;
-    }
+        &:focus ~ .form__label {
+        position: absolute;
+        top: 0;
+        display: block;
+        transition: 0.2s;
+        font-size: 1rem;
+        color: #11998e;
+        font-weight: 700;
+        }
+
+        &.form__field:placeholder-shown ~ .form__label {
+        font-size: 1.3rem;
+        cursor: text;
+        top: 20px;
+        }
+        
+        &:focus ~ .form__label{
+            top: 0 !important;
+        }
 
     /* reset input */
-    &:required, &WS:invalid {
+    &:required, &:invalid {
     box-shadow: none;
     }
+
+
+
+
+
+    
+}
 
 `;
 
 export const StyledLabel = styled.label<props>`
+&.inputSimple{
     position: absolute;
     top: 0;
     display: block;
     transition: 0.2s;
     font-size: 1rem;
     color: #9b9b9b;
+
+   :focus{
+    top: 0px;
+   }
+}
 `;

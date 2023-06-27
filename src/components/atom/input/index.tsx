@@ -6,6 +6,7 @@ interface props {
   width?: string;
   height?: string;
   placeholder?: string;
+  
 }
 
 const Input: React.FC<props> = () => {
@@ -14,13 +15,13 @@ const Input: React.FC<props> = () => {
       <StyledInputContainer className="field">
         <StyleInput
           type="input"
-          className="form__field"
+          className="form__field inputSimple"
           placeholder="Name"
           name="name"
           id="name"
           required
         />
-        <StyledLabel htmlFor="name" className="form__label">
+        <StyledLabel htmlFor="name" className="form__label inputSimple">
           Name
         </StyledLabel>
       </StyledInputContainer>
