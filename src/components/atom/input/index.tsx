@@ -1,6 +1,5 @@
 import React from "react";
-import { StyleInput } from "./style";
-import { Placeholder } from "react-bootstrap";
+import { StyleInput, StyledInputContainer, StyledLabel } from "./style";
 
 interface props {
   inputtype?: string;
@@ -9,8 +8,24 @@ interface props {
   placeholder?: string;
 }
 
-const Input: React.FC<props> = ({inputtype, width, height, placeholder}) => {
-  return <StyleInput type={inputtype} width={width} height={height} placeholder={placeholder}/>;
+const Input: React.FC<props> = () => {
+  return (
+    <>
+      <StyledInputContainer className="field">
+        <StyleInput
+          type="input"
+          className="form__field"
+          placeholder="Name"
+          name="name"
+          id="name"
+          required
+        />
+        <StyledLabel htmlFor="name" className="form__label">
+          Name
+        </StyledLabel>
+      </StyledInputContainer>
+    </>
+  );
 };
 
 export default Input;
