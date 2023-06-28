@@ -3,15 +3,17 @@ import { Input, Label } from "../../atom";
 
 interface props {
     children:  string | string[] | JSX.Element | React.ReactElement;
+    placeholder?: string
 }
 
 const MoleculeInput: React.FC<props> = ({
-    children
+    children,
+    placeholder,
 }) => {
   return (
     <>
       <Label>{children}</Label>
-      <Input></Input>
+      <Input placeholder={placeholder}></Input>
     </>
   );
 };
