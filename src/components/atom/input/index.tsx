@@ -1,5 +1,5 @@
 import React from "react";
-import { StyleInput, StyledInputContainer, StyledLabel } from "./style";
+import { StyleInput, StyledInputContainer} from "./style";
 
 interface props {
   inputtype?: string;
@@ -9,21 +9,19 @@ interface props {
   
 }
 
-const Input: React.FC<props> = () => {
+const Input: React.FC<props> = ({placeholder}) => {
   return (
     <>
       <StyledInputContainer className="field">
         <StyleInput
           type="input"
           className="form__field inputSimple"
-          placeholder="Name"
+          placeholder={ placeholder }
           name="name"
           id="name"
           required
         />
-        <StyledLabel htmlFor="name" className="form__label inputSimple">
-          Name
-        </StyledLabel>
+        
       </StyledInputContainer>
     </>
   );

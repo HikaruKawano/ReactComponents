@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from '../../color/colors';
+
 
 interface props {
     width?: string;
@@ -16,75 +16,32 @@ export const StyledInputContainer = styled.div<props>`
 
 export const StyleInput = styled.input<props>`
 
-&.inputSimple{
-    font-family: inherit;
-    width: 100%;
-    border: 0;
-    border-bottom: 2px solid #9b9b9b;
-    outline: 0;
-    font-size: 1.3rem;
-    color: #fff;
-    padding: 7px 0;
-    background: transparent;
-    transition: border-color 0.2s;
-    
-    &::placeholder {
-    color: transparent;
-    }
-  
-    &:focus {
-    padding-bottom: 6px;
-    font-weight: 700;
-    border-width: 3px;
-    border-image: linear-gradient(to right, #11998e, #38ef7d);
-    border-image-slice: 1;
-    }
+    &.inputSimple{
+        padding: 10px;
+        border-radius: 10px;
+        background-color: rgba(0, 0, 0, 0.2);
+        outline: 1px gray;
+        color : gray;
+        border: none;
 
-        &:focus ~ .form__label {
-        position: absolute;
-        top: 0;
-        display: block;
-        transition: 0.2s;
-        font-size: 1rem;
-        color: #11998e;
-        font-weight: 700;
+        &:focus{
+            animation: focus 1s ease;
+            -webkit-animation-fill-mode: forwards;
         }
 
-        &.form__field:placeholder-shown ~ .form__label {
-        font-size: 1.3rem;
-        cursor: text;
-        top: 20px;
-        }
-        
-        &:focus ~ .form__label{
-            top: 0 !important;
+        &::placeholder{
+            padding: 5px;
         }
 
-    /* reset input */
-    &:required, &:invalid {
-    box-shadow: none;
+        @keyframes focus {
+            from{
+                outline: 1px solid rgba(0, 0, 0, 0.2);
+            }
+            to{
+                outline: 1.5px solid gray;
+            }
+        }
     }
-
-
-
-
-
-    
-}
 
 `;
 
-export const StyledLabel = styled.label<props>`
-&.inputSimple{
-    position: absolute;
-    top: 0;
-    display: block;
-    transition: 0.2s;
-    font-size: 1rem;
-    color: #9b9b9b;
-
-   :focus{
-    top: 0px;
-   }
-}
-`;

@@ -9,8 +9,12 @@ function App() {
  
 
   return (
-    <Container width='100%' height='100vh'>
-     <Input width='120px' height='40px' />
+    <Container width='50%' height='50vh' display='flex' align='center' margin='0 auto' >
+      <Input width='12px' height='40px' />
+        <Input width='120px' height='40px' />
+        <Input width='120px' height='40px' />
+        <Input width='120px' height='40px' />
+        <Input width='120px' height='40px' />
     </Container>
   )
 }
