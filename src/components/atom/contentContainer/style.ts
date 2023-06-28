@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from '../../../stories/components/color/colors';
+import Colors from '../../../color/colors';
 
 export const ArticleStyle = styled.article`
     height: 100vh;

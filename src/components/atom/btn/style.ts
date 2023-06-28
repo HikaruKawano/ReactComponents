@@ -1,6 +1,6 @@
 
 import styled from 'styled-components';
-import Colors from '../../../stories/components/color/colors';
+import Colors from '../../../color/colors';
 import './style.css';
 
 interface btn {

@@ -1,5 +1,5 @@
 import styled from 'styled-components';
-import Colors from '../../../color/colors';
+
 
 
 interface props {
