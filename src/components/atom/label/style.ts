@@ -8,6 +8,7 @@ interface props {
     margin?: string;
     display?: string;
     textAlign?: string;
+    height?: string;
 }
 
 export const TextStyle = styled.label<props>`
@@ -17,6 +18,7 @@ export const TextStyle = styled.label<props>`
     text-align:${(props) => props.textAlign || 'justify'} ;
     padding: ${(props) => props.padding};
     display: ${(props) => props.display || 'block'} ;
+    height: ${(props) => props.height};
 
     @media screen and (max-width: 990px) {
         display: block;

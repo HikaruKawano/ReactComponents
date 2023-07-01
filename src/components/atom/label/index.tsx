@@ -1,8 +1,10 @@
+
+
 import { TextStyle } from "./style";
 import './style.css'
 
-interface props {
-  children: string | string[] | JSX.Element | React.ReactElement;
+export interface LabelProps {
+  children: string | JSX.Element | React.ReactElement ;
   color?: string;
   padding?: string;
   className?: string;
@@ -10,9 +12,12 @@ interface props {
   margin?: string;
   display?: string;
   textAlign?: string;
+  height?: string;
 }
 
-const Label: React.FC<props> = ({
+
+
+const Label: React.FC<LabelProps> = ({
   children,
   color,
   padding,
@@ -21,6 +26,8 @@ const Label: React.FC<props> = ({
   margin,
   display,
   textAlign,
+  height,
+  
 }) => {
   return (
     <TextStyle
@@ -31,6 +38,7 @@ const Label: React.FC<props> = ({
       margin={margin}
       display={display}
       textAlign={textAlign}
+      height={height}
     >
       {children}
     </TextStyle>

@@ -1,27 +1,36 @@
 import React from "react";
-import { StyleInput, StyledInputContainer} from "./style";
+import { StyleInput, StyledInputContainer } from "./style";
 
-interface props {
+export interface InputProps {
   inputtype?: string;
   width?: string;
   height?: string;
   placeholder?: string;
-  
+  name?: string;
+  id?: string;
 }
 
-const Input: React.FC<props> = ({placeholder}) => {
+const Input: React.FC<InputProps> = ({
+  placeholder,
+  height,
+  inputtype,
+  width,
+  name,
+  id,
+}) => {
   return (
     <>
       <StyledInputContainer className="field">
         <StyleInput
-          type="input"
+          type={inputtype}
           className="form__field inputSimple"
-          placeholder={ placeholder }
-          name="name"
-          id="name"
+          placeholder={placeholder}
+          name={name}
+          id={id}
           required
+          height={height}
+          width={width}
         />
-        
       </StyledInputContainer>
     </>
   );

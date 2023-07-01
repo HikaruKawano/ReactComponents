@@ -10,4 +10,4 @@ import MoleculeInput from "./MoleculeInput";
 
 
 
-export {MoleculeInput};
+export {MoleculeInput}
