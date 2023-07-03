@@ -1,17 +1,18 @@
-import React, { useState } from "react";
+import React, {
+  JSXElementConstructor,
+  ReactElement,
+  useEffect,
+  useState,
+  ReactNode,
+} from "react";
 import { MoleculeInput } from "../../molecule";
 import { Button } from "../../atom";
-
-
-
-
+import { number } from "prop-types";
 
 interface props {
-  children: string[] | JSX.Element[] | React.ReactElement[];
+  children: ReactNode[];
 
   LabelProps: {
-    
-
     placeholder?: string;
     height?: string;
     display?: "flex" | "none" | "block" | "inline";
@@ -21,7 +22,6 @@ interface props {
     fontSize?: string;
     margin?: string;
     textAlign?: string;
-    
   };
 
   InputProps: {
@@ -31,38 +31,40 @@ interface props {
     placeholder?: string;
     name?: string;
     id?: string;
+    amount: number;
   };
 }
 
-
-
-
-const AuthenticationOrganisme: React.FC<props> = ({  LabelProps, InputProps, children }) => {
-
-  const [useChildren, setChildren] = useState<(string | JSX.Element)[] | undefined>();
-
-  
-    children.forEach((child, index) => {
-      // Verifique se o elemento JSX possui propriedades
-      if (React.isValidElement(child)) {
-        // Acesse as propriedades usando child.props
-        const childProps = child.props;
-        console.log(childProps); // Exemplo de acesso às props do elemento
-
+const AuthenticationOrganisme: React.FC<props> = ({
+  LabelProps,
+  InputProps,
+  children,
+}) => {
+  const [useChildren, setChildren] = useState<ReactNode[]>([]);
+  let count = 0;
+  useEffect(() => {
+    if (count === 0) {
+      if (children) {
+        children.forEach((child, index) => {
+          if (React.isValidElement(child)) {
+            const childProps = child.type as unknown as { name?: string };
+            if (childProps.name === "Text") {
+              setChildren((useChildren) => [...useChildren, children[index]]);
+            }
+          }
+        });
+      } else {
+        setChildren(["SSSSS", "sssss"]);
       }
-    });
+    }
+    count++;
+    console.log(count);
+  }, [children]);
 
-    
-
-
-  
-  
-  
+  console.log(useChildren);
 
   return (
     <>
-      
-
       <MoleculeInput
         LabelProps={{
           height: LabelProps.height,
@@ -73,9 +75,7 @@ const AuthenticationOrganisme: React.FC<props> = ({  LabelProps, InputProps, chi
           margin: LabelProps.margin,
           placeholder: LabelProps.placeholder,
           textAlign: LabelProps.placeholder,
-         
         }}
-
         InputProps={{
           height: InputProps.height,
           id: InputProps.id,
@@ -84,10 +84,9 @@ const AuthenticationOrganisme: React.FC<props> = ({  LabelProps, InputProps, chi
           width: InputProps.width,
         }}
       >
-        {children[1]}
+        {useChildren}
       </MoleculeInput>
-
-      {useChildren}  
+      {useChildren}
 
       <Button></Button>
     </>

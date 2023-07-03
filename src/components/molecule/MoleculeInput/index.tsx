@@ -3,7 +3,7 @@ import { Input, Label } from "../../atom";
 
 
 interface props {
-  children: string | JSX.Element | React.ReactElement ;
+  children: string | JSX.Element | React.ReactElement;
 
   LabelProps: {
     LabelText?: string;

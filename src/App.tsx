@@ -1,4 +1,4 @@
-import { AuthenticationOrganisme } from "./components/Organism";
+import { Text } from "./components/atom";
 import { MoleculeInput } from "./components/molecule";
 import LoginTemplate from "./components/template/Login";
 
@@ -9,11 +9,8 @@ function App() {
       InputStyle={{}}
       ContainerStyle={{}}
     >
-      <p>sdadad</p>
-      <MoleculeInput InputProps={{}} LabelProps={{}}>
-        <p>aaaaaa</p>
-      </MoleculeInput>
-      <p>asdada</p>
+      <Text>AAAAA</Text>
+      <Text>DDDDD</Text>
     </LoginTemplate>
   );
 }
