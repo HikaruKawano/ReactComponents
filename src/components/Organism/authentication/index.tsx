@@ -1,13 +1,7 @@
-import React, {
-  JSXElementConstructor,
-  ReactElement,
-  useEffect,
-  useState,
-  ReactNode,
-} from "react";
+import React, { useEffect, useState, ReactNode, createContext } from "react";
 import { MoleculeInput } from "../../molecule";
 import { Button } from "../../atom";
-import { number } from "prop-types";
+
 
 interface props {
   children: ReactNode[];
@@ -40,7 +34,10 @@ const AuthenticationOrganisme: React.FC<props> = ({
   InputProps,
   children,
 }) => {
+  
   const [useChildren, setChildren] = useState<ReactNode[]>([]);
+
+
   let count = 0;
   useEffect(() => {
     if (count === 0) {
@@ -53,42 +50,53 @@ const AuthenticationOrganisme: React.FC<props> = ({
             }
           }
         });
+        createContext(useChildren);
       } else {
         setChildren(["SSSSS", "sssss"]);
       }
     }
+
+
+    
     count++;
-    console.log(count);
+
+    
+    
   }, [children]);
 
-  console.log(useChildren);
+
+
+  
 
   return (
     <>
-      <MoleculeInput
-        LabelProps={{
-          height: LabelProps.height,
-          color: LabelProps.color,
-          padding: LabelProps.padding,
-          display: LabelProps.display,
-          fontSize: LabelProps.fontSize,
-          margin: LabelProps.margin,
-          placeholder: LabelProps.placeholder,
-          textAlign: LabelProps.placeholder,
-        }}
-        InputProps={{
-          height: InputProps.height,
-          id: InputProps.id,
-          inputtype: InputProps.inputtype,
-          name: InputProps.name,
-          width: InputProps.width,
-        }}
-      >
-        {useChildren}
-      </MoleculeInput>
-      {useChildren}
-
-      <Button></Button>
+    
+      {useChildren.map((childContent, index) => (
+        
+        <MoleculeInput
+          
+          LabelProps={{
+            height: LabelProps.height,
+            color: LabelProps.color,
+            padding: LabelProps.padding,
+            display: LabelProps.display,
+            fontSize: LabelProps.fontSize,
+            margin: LabelProps.margin,
+            placeholder: LabelProps.placeholder,
+            textAlign: LabelProps.placeholder,
+          }}
+          InputProps={{
+            height: InputProps.height,
+            id: InputProps.id,
+            inputtype: InputProps.inputtype,
+            name: InputProps.name,
+            width: InputProps.width,
+          }}
+        >
+          {childContent}
+        </MoleculeInput>
+      ))}
+      ;<Button></Button>
     </>
   );
 };

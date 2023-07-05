@@ -5,7 +5,7 @@ import { TextStyle } from "./style";
 import './style.css'
 
 export interface LabelProps {
-  children: string | JSX.Element | React.ReactElement | ReactNode[] ;
+  children: string | JSX.Element | React.ReactElement | ReactNode;
   color?: string;
   padding?: string;
   className?: string;

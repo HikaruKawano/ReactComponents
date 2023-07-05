@@ -6,11 +6,13 @@ function App() {
   return (
     <LoginTemplate
       LabelStyle={{ height: "50px" }}
-      InputStyle={{}}
+      InputStyle={{ amount: 1}}
       ContainerStyle={{}}
     >
       <Text>AAAAA</Text>
-      <Text>DDDDD</Text>
+      <Text> ffffff</Text>
+      <Text>ffffffffff</Text>
+      
     </LoginTemplate>
   );
 }

@@ -25,6 +25,7 @@ interface props {
     placeholder?: string;
     name?: string;
     id?: string;
+    amount: number;
   };
 
   ContainerStyle: {
@@ -52,7 +53,10 @@ interface props {
   };
 }
 
+
+
 const LoginTemplate: React.FC<props> = ({ children, LabelStyle , InputStyle }) => {
+  
   return (
     <Container>
       <AuthenticationOrganisme
@@ -72,6 +76,7 @@ const LoginTemplate: React.FC<props> = ({ children, LabelStyle , InputStyle }) =
           inputtype: InputStyle.inputtype,
           name: InputStyle.name,
           width: InputStyle.width,
+          amount: InputStyle.amount,
         }}
        
       >

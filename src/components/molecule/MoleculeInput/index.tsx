@@ -1,9 +1,9 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import { Input, Label } from "../../atom";
 
 
 interface props {
-  children: string | JSX.Element | React.ReactElement;
+  children: string | JSX.Element | React.ReactElement | ReactNode;
 
   LabelProps: {
     LabelText?: string;
