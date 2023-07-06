@@ -1,17 +1,17 @@
 import { Text } from "./components/atom";
-import { LoginTemplate } from "./components/template/Login";
-
+import { Auth } from "./components/template/Login";
 
 function App() {
   return (
-    <LoginTemplate.root>
-      <LoginTemplate.card typeCard="CardDefault">
-        <LoginTemplate.input />
-        <LoginTemplate.label>
+    <Auth.Login.root>
+      <Auth.Login.form >
+        <Auth.Login.input />
+        <Auth.Login.label>
           <Text>AAAAAAAAAAA</Text>
-        </LoginTemplate.label>
-      </LoginTemplate.card>
-    </LoginTemplate.root>
+        </Auth.Login.label>
+        <Auth.Login.button>Enviar</Auth.Login.button>
+      </Auth.Login.form>
+    </Auth.Login.root>
   );
 }
 

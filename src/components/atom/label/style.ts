@@ -14,7 +14,7 @@ interface props {
 export const TextStyle = styled.label<props>`
     color: ${(props) => props.color || Colors.pink};
     font-size: ${(props) => props.fontSize || 'x-large'} ;
-    margin: ${(props) => props.margin || '0 45px 0 0'};
+    margin: ${(props) => props.margin};
     text-align:${(props) => props.textAlign || 'justify'} ;
     padding: ${(props) => props.padding};
     display: ${(props) => props.display || 'block'} ;

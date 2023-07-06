@@ -18,7 +18,7 @@ export interface LabelProps {
 
 
 
-const Label: React.FC<LabelProps> = ({
+const Label = ({
   children,
   color,
   padding,
@@ -29,7 +29,7 @@ const Label: React.FC<LabelProps> = ({
   textAlign,
   height,
   
-}) => {
+}: LabelProps) => {
   return (
     <TextStyle
       color={color}

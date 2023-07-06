@@ -1,10 +1,12 @@
-import { Card, Container, Input, Label } from "../../atom";
+import { Button, Container, Input, Label } from "../../atom";
 import Form from "../../atom/form";
 
-export const LoginTemplate = {
-  root: Container,
-  form: Form,
-  card: Card,
-  input: Input,
-  label: Label,
-}
+export const Auth = {
+  Login: {
+    root: Container ,
+    form: Form,
+    input: Input,
+    label: Label,
+    button: Button,
+  },
+};

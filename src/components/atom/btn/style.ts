@@ -1,15 +1,15 @@
 
 import styled from 'styled-components';
 import Colors from '../../../color/colors';
-import './style.css';
+
 
 interface btn {
-    bg?: string;
-    w?: string;
-    h?: string;
-    mt?: string;
+    background?: string;
+    width?: string;
+    height?: string;
+    margin?: string;
     color?: string;
-    pd?: string;
+    padding?: string;
     display?: string;
     align?: string;
     justify?: string;
@@ -20,16 +20,16 @@ interface btn {
 
 
 export const Button = styled.button<btn>`
-    width: ${(props) => props.w};
-    height: ${(props) => props.h};
-    background-color: ${(props) => props.bg};
+    width: ${(props) => props.width || '25%'};
+    height: ${(props) => props.height || '5vh'};
+    background-color: ${(props) => props.background};
     border-radius: 15px;
     border: none;
     font-weight: bold;
     font-size: large;
     color: ${(props) => props.color || Colors.background};
-    margin-top: ${(props) => props.mt};
-    padding: ${(props) => props.pd};
+    margin: ${(props) => props.margin};
+    padding: ${(props) => props.padding};
     display: ${(props) => props.display};
     align-items: ${(props) => props.align};
     justify-content: ${(props) => props.justify};

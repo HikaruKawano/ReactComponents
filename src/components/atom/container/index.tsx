@@ -26,7 +26,7 @@ interface props {
   resDisplay?: string;
 }
 
-const Container: React.FC<props> = ({
+const Container = ({
   children,
   flexBasis,
   padding,
@@ -49,7 +49,7 @@ const Container: React.FC<props> = ({
   resJustify,
   resFlexDirection,
   resDisplay,
-}) => {
+}: props) => {
   return (
     <ContainerStyle
       flexBasis={flexBasis}
