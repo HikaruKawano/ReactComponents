@@ -8,7 +8,7 @@ export interface LabelProps {
   children: string | JSX.Element | React.ReactElement | ReactNode;
   color?: string;
   padding?: string;
-  className?: 'Email' | 'Password';
+  className?: 'Email' | 'Password' | 'ConfirmPassoword';
   fontSize?: string;
   margin?: string;
   display?: string;
