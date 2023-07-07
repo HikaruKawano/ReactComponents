@@ -1,89 +1,68 @@
+import {ReactNode } from "react";
+import { Button, Container, Input, Label } from "../../atom";
+import Form from "../../atom/form";
 import React from "react";
-import { AuthenticationOrganisme } from "../../Organism";
-import { Container } from "../../atom";
 
 
 interface props {
-  children: string[] | JSX.Element[] | React.ReactElement[];
-
-  LabelStyle: {
-    placeholder?: string;
-    height?: string;
-    display?: "flex" | "none" | "block" | "inline";
-    color?: string;
-    padding?: string;
-    className?: string;
-    fontSize?: string;
-    margin?: string;
-    textAlign?: string;
-  };
-
-  InputStyle: {
-    inputtype?: string;
-    width?: string;
-    height?: string;
-    placeholder?: string;
-    name?: string;
-    id?: string;
-    amount: number;
-  };
-
-  ContainerStyle: {
-    flexBasis?: string;
-    padding?: string;
-    background?: string;
-    width?: string;
-    height?: string;
-    display?: string;
-    align?: string;
-    justify?: string;
-    flexDirection?: string;
-    borderRadius?: string;
-    margin?: string;
-    opacity?: string;
-
-    resMargin?: string;
-    resWidth?: string;
-    resHeight?: string;
-    resPadding?: string;
-    resAlign?: string;
-    resJustify?: string;
-    resFlexDirection?: string;
-    resDisplay?: string;
-  };
+  children?: ReactNode;
+  isEdit?: boolean;
 }
 
-
-
-const LoginTemplate: React.FC<props> = ({ children, LabelStyle , InputStyle }) => {
-  
-  return (
-    <Container>
-      <AuthenticationOrganisme
-        LabelProps={{
-          height: LabelStyle.height,
-          color: LabelStyle.color,
-          padding: LabelStyle.padding,
-          display: LabelStyle.display,
-          fontSize: LabelStyle.fontSize,
-          margin: LabelStyle.margin,
-          placeholder: LabelStyle.placeholder,
-          textAlign: LabelStyle.placeholder,
-        }}
-        InputProps={{
-          height: InputStyle.height,
-          id: InputStyle.id,
-          inputtype: InputStyle.inputtype,
-          name: InputStyle.name,
-          width: InputStyle.width,
-          amount: InputStyle.amount,
-        }}
-       
-      >
-       {children}
-      </AuthenticationOrganisme>
-    </Container>
-  );
+const Auth = {
+  Login: {
+    root: Container,
+    form: Form,
+    input: Input,
+    Label: Label,
+    button: Button,
+  },
 };
 
-export default LoginTemplate;
+export const Template = {
+  Components: Auth.Login,
+
+  Login: ({ children, isEdit = false}: props) => {
+    let compEmail;
+    let compEmailProps;
+    let compPassword;
+    let compPasswordProps;
+    const addChildren: React.ReactNode[] = [];
+
+    if(children){
+      React.Children.forEach(children, (child) => {
+        if( React.isValidElement(child)){
+          const classname = child.props.className as string;
+
+          if (isEdit && classname) {
+            {classname == 'Email' ? (
+              compEmail = child.props.children,
+              compEmailProps = child.props
+            ):(
+              compPassword = child.props.children,
+              compPasswordProps = child.props
+            )}
+          }else if (isEdit && !classname) {
+            addChildren.push(child)
+          }
+        }
+      })
+    }
+
+    
+
+
+    return (
+      <Auth.Login.root>
+        <Auth.Login.form id="" name="">
+          <Auth.Login.Label props={compEmailProps} >{compEmail ? compEmail :  'Email'}</Auth.Login.Label>
+          <Auth.Login.input />
+          <Auth.Login.Label props={compPasswordProps}>{compPassword ? compPassword : 'Senha'}</Auth.Login.Label>
+          <Auth.Login.input />
+          {addChildren}
+          <Auth.Login.button>Enviar</Auth.Login.button>
+        </Auth.Login.form>
+      </Auth.Login.root>
+    );
+  },
+};

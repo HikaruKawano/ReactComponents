@@ -8,38 +8,32 @@ export interface LabelProps {
   children: string | JSX.Element | React.ReactElement | ReactNode;
   color?: string;
   padding?: string;
-  className?: string;
+  className?: 'Email' | 'Password';
   fontSize?: string;
   margin?: string;
   display?: string;
   textAlign?: string;
   height?: string;
+  props?: LabelProps;
 }
 
 
 
-const Label: React.FC<LabelProps> = ({
+const Label = ({
   children,
-  color,
-  padding,
-  className,
-  fontSize,
-  margin,
-  display,
-  textAlign,
-  height,
-  
-}) => {
+  props
+}: LabelProps) => {
   return (
     <TextStyle
-      color={color}
-      padding={padding}
-      className={className}
-      fontSize={fontSize}
-      margin={margin}
-      display={display}
-      textAlign={textAlign}
-      height={height}
+      color={props?.color}
+      padding={props?.padding}
+      className={props?.className}
+      fontSize={props?.fontSize}
+      margin={props?.margin}
+      display={props?.display}
+      textAlign={props?.textAlign}
+      height={props?.height}
+
     >
       {children}
     </TextStyle>

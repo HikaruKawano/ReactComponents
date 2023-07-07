@@ -1,15 +1,15 @@
 import React, { MouseEventHandler } from 'react';
 import { Button } from './style';
 
-interface ButtonStyle{
+interface ButtonProps{
     children?: JSX.Element | React.ReactNode
-    bg?: string
+    background?: string
     height?:string
     width?:string
-    mt?: string
+    margin?: string
     color?:string
     className?:string
-    pd?: string
+    padding?: string
     display?:string
     align?:string
     justify?:string
@@ -18,24 +18,24 @@ interface ButtonStyle{
     resDisplay?:string
 }
 
-const Btn :React.FC<ButtonStyle> = ({
+const Btn = ({
     children,
-    bg,
+    background,
     height,
     width,
-    mt, 
+    margin, 
     color,
     className,
-    pd,
+    padding,
     display,
     align,
     justify,
     onClick,
 
     resDisplay,
-}) => {
+}: ButtonProps) => {
     return (
-    <Button bg={bg} h={height} w={width} mt={mt} onClick={onClick} color={color} display={display} className={className} pd={pd} justify={justify} align={align} resDisplay={resDisplay}>
+    <Button background={background} height={height} width={width} margin={margin} onClick={onClick} color={color} display={display} className={className} padding={padding} justify={justify} align={align} resDisplay={resDisplay}>
         {children}
     </Button>
     )

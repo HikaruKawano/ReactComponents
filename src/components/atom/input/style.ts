@@ -4,28 +4,28 @@ import styled from 'styled-components';
 interface props {
     width?: string;
     height?: string;
+    padding?: string;
+    radius?: string;
+    outline?: string;
+    border?: string;
+    background?: string;
+    margin?: string;
 }
 
-export const StyledInputContainer = styled.div<props>`
-    position: relative;
-    padding: 15px 0 0;
-    margin-top: 10px;
-    width: ${(props) => props.width};
-    height: ${(props) => props.height};
 
-`;
 
 export const StyleInput = styled.input<props>`
 
     &.inputSimple{
-        padding: 10px;
-        border-radius: 10px;
-        background-color: rgba(0, 0, 0, 0.2);
-        outline: 1px gray;
-        color : gray;
-        border: none;
+        padding:${(props) => props.padding || '10px'};
+        border-radius: ${(props) => props.radius || '10px'};
+        background-color: ${(props) => props.background || 'rgba(0, 0, 0, 0.2)'};
+        outline: ${(props) => props.outline || '1px gray'} ;
+        color : ${(props) => props.color || 'gray'} ;
+        border: ${(props) => props.border || 'none'} ;
         width: ${(props) => props.width};
         height: ${(props) => props.height};
+        margin: ${(props) => props.margin || '0 0 25px 0'};
 
         &:focus{
             animation: focus 1s ease;

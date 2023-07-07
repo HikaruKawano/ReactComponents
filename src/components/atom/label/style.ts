@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import Colors from '../../../color/colors';
 
 interface props {
     color?: string;
@@ -12,9 +11,12 @@ interface props {
 }
 
 export const TextStyle = styled.label<props>`
-    color: ${(props) => props.color || Colors.pink};
-    font-size: ${(props) => props.fontSize || 'x-large'} ;
-    margin: ${(props) => props.margin || '0 45px 0 0'};
+    font-weight: 600;
+    line-height: 32px;
+
+    color: ${(props) => props.color || 'rgb(255 255 255 / 0.5)'};
+    font-size: ${(props) => props.fontSize || '16px'} ;
+    margin: ${(props) => props.margin};
     text-align:${(props) => props.textAlign || 'justify'} ;
     padding: ${(props) => props.padding};
     display: ${(props) => props.display || 'block'} ;
