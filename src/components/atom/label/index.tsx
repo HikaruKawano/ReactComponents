@@ -1,38 +1,28 @@
 
 
 import { ReactNode } from "react";
-import { TextStyle } from "./style";
-import './style.css'
+import { TextStyle, propsStyleLabel } from "./style";
 
-export interface LabelProps {
+interface props extends propsStyleLabel {
   children: string | JSX.Element | React.ReactElement | ReactNode;
-  color?: string;
-  padding?: string;
   className?: 'Email' | 'Password' | 'ConfirmPassoword';
-  fontSize?: string;
-  margin?: string;
-  display?: string;
-  textAlign?: string;
-  height?: string;
-  props?: LabelProps;
 }
 
 
 
 const Label = ({
   children,
-  props
-}: LabelProps) => {
+}:props, props: props) => {
   return (
     <TextStyle
-      color={props?.color}
-      padding={props?.padding}
-      className={props?.className}
-      fontSize={props?.fontSize}
-      margin={props?.margin}
-      display={props?.display}
-      textAlign={props?.textAlign}
-      height={props?.height}
+      color={props.color}
+      padding={props.padding}
+      className={props.className}
+      fontSize={props.fontSize}
+      margin={props.margin}
+      display={props.display}
+      textAlign={props.textAlign}
+      height={props.height}
 
     >
       {children}

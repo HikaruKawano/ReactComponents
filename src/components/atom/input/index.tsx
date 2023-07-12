@@ -1,7 +1,7 @@
-import { StyleInput } from "./style";
+import { StyleInput, propsStyleInput } from "./style";
 import { InputHTMLAttributes } from "react";
 
-export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
+export interface InputProps extends InputHTMLAttributes<HTMLInputElement>, propsStyleInput {
   inputtype?:
     | "text"
     | "password"
@@ -24,16 +24,12 @@ export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
     | "month"
     | "time"
     | "week";
-  width?: string;
-  height?: string;
   placeholder?: string;
   name?: string;
   id?: string;
   hasIcon?: boolean;
-  padding?: string;
-  radius?: string;
-  outline?: string;
-  border?: string;
+  width?: string;
+  height?: string;
 }
 
 export function Input(props: InputProps) {

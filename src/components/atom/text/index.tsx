@@ -1,42 +1,23 @@
-import { TextStyle } from "./style";
+import { ReactNode } from "react";
+import { TextStyle, propsStyleText } from "./style";
 import './style.css'
 
-interface props {
-  children: string | string[] | JSX.Element | React.ReactElement;
-  color?: string;
-  padding?: string;
-  className?: string;
-  fontSize?: string;
-  margin?: string;
-  display?: string;
-  textAlign?: string;
+interface props extends propsStyleText {
+  children: ReactNode;
 
-  resMargin?: string;
 }
 
-const Text: React.FC<props> = ({
-  children,
-  color,
-  padding,
-  className,
-  fontSize,
-  margin,
-  display,
-  textAlign,
-
-  resMargin,
-}) => {
+const Text: React.FC<props> = ({children},props: propsStyleText) => {
   return (
     <TextStyle
-      color={color}
-      padding={padding}
-      className={className}
-      fontSize={fontSize}
-      margin={margin}
-      display={display}
-      textAlign={textAlign}
+      color={props.color}
+      padding={props.padding}
+      fontSize={props.fontSize}
+      margin={props.margin}
+      display={props.display}
+      textAlign={props.textAlign}
 
-      resMargin={resMargin}
+      resMargin={props.resMargin}
     >
       {children}
     </TextStyle>

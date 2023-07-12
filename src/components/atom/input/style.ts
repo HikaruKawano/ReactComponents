@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 
-interface props {
+export interface propsStyleInput {
     width?: string;
     height?: string;
     padding?: string;
@@ -14,18 +14,20 @@ interface props {
 
 
 
-export const StyleInput = styled.input<props>`
+export const StyleInput = styled.input.attrs<propsStyleInput>({
+    className: 'p-2.5 rounded-xl outline-1 outline-gray-950 text-gray-700 border-none mb-6'
+})`
 
     &.inputSimple{
-        padding:${(props) => props.padding || '10px'};
-        border-radius: ${(props) => props.radius || '10px'};
+        padding:${(props) => props.padding};
+        border-radius: ${(props) => props.radius};
         background-color: ${(props) => props.background || 'rgba(0, 0, 0, 0.2)'};
-        outline: ${(props) => props.outline || '1px gray'} ;
-        color : ${(props) => props.color || 'gray'} ;
-        border: ${(props) => props.border || 'none'} ;
+        outline: ${(props) => props.outline} ;
+        color : ${(props) => props.color} ;
+        border: ${(props) => props.border} ;
         width: ${(props) => props.width};
         height: ${(props) => props.height};
-        margin: ${(props) => props.margin || '0 0 25px 0'};
+        margin: ${(props) => props.margin};
 
         &:focus{
             animation: focus 1s ease;

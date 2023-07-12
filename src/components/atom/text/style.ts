@@ -1,28 +1,28 @@
 import styled from 'styled-components';
 
 
-interface props {
+export interface propsStyleText {
     color?: string;
     padding?: string;
     fontSize?: string;
     margin?: string;
     display?: string;
     textAlign?: string;
+    fontWeight?: string;
+    lineHeight?: string;
+    maxWidth?: number;
+
 
     resMargin?: string;
 }
 
-export const TextStyle = styled.p<props>`
-    font-weight: 600;
-    line-height: 32px;
-    color: rgba(255, 255, 255, 0.5);
-    font-size: 16px;
-    max-width: 470px;
+export const TextStyle = styled.p.attrs<propsStyleText>({
+    className: 'font-semibold leading-8 text-gray-500 text-base max-w-lg'
+})`
+    font-weight: ${(props) => props.fontWeight};
+    line-height: ${(props) => props.lineHeight};
+    color:  ${(props) => props.color};
+    font-size: ${(props) => props.fontSize};
+    max-width: ${(props) => props.maxWidth};
 
-    @media screen and (max-width: 990px) {
-        display: block;
-        font-size: 1.2rem;
-        margin-right: 0px;
-        margin: ${(props) => props.resMargin}
-    }
 `;

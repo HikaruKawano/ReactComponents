@@ -15,6 +15,7 @@ interface props {
   borderRadius?: string;
   margin?: string;
   opacity?: string
+  
 
   resFlexBasis?: string;
   resPadding?: string;
@@ -28,19 +29,21 @@ interface props {
   resMargin?: string;
 }
 
-export const ContainerStyle = styled.div<props>`
+export const ContainerStyle = styled.div.attrs<props>({
+  className: "w-2/4 h-96 flex items-center justify-center flex-col rounded-2xl backdrop-blur-2xl",
+})`
     flex-basis: ${(props) => props.flexBasis};
     padding: ${(props) => props.padding};
     background-color:${(props) => props.background || 'rgba(0, 0, 0, 0.2)'};
-    width: ${(props) => props.width || '50%'};
-    height: ${(props) => props.height || '50vh'};
-    display: ${(props) => props.display || 'flex'};
-    align-items: ${(props) => props.align || 'center'};
-    justify-content: ${(props) => props.justify || 'center'};
-    flex-direction: ${(props) => props.flexDirection || 'column'};
-    border-radius: ${(props) => props.borderRadius || '15px'};
+    width: ${(props) => props.width };
+    height: ${(props) => props.height};
+    display: ${(props) => props.display};
+    align-items: ${(props) => props.align};
+    justify-content: ${(props) => props.justify};
+    flex-direction: ${(props) => props.flexDirection};
+    border-radius: ${(props) => props.borderRadius};
     margin:${(props) => props.margin};
-    backdrop-filter: blur(30px);
+   
     
     @media only screen and (max-width: 990px)
  {

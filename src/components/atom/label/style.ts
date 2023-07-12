@@ -1,6 +1,6 @@
 import styled from 'styled-components';
 
-interface props {
+export interface propsStyleLabel {
     color?: string;
     padding?: string;
     fontSize?: string;
@@ -10,22 +10,19 @@ interface props {
     height?: string;
 }
 
-export const TextStyle = styled.label<props>`
+export const TextStyle = styled.label.attrs<propsStyleLabel>({
+    className: 'text-gray-500 text-base text-justify block'
+})`
     font-weight: 600;
     line-height: 32px;
 
-    color: ${(props) => props.color || 'rgb(255 255 255 / 0.5)'};
-    font-size: ${(props) => props.fontSize || '16px'} ;
+    color: ${(props) => props.color};
+    font-size: ${(props) => props.fontSize} ;
     margin: ${(props) => props.margin};
-    text-align:${(props) => props.textAlign || 'justify'} ;
+    text-align:${(props) => props.textAlign} ;
     padding: ${(props) => props.padding};
-    display: ${(props) => props.display || 'block'} ;
+    display: ${(props) => props.display} ;
     height: ${(props) => props.height};
 
-    @media screen and (max-width: 990px) {
-        display: block;
-        font-size: 1.2rem;
-        margin-right: 0px;
-        text-align: center;
-    }
+   
 `;

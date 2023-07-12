@@ -1,8 +1,8 @@
-import { ReactElement } from "react";
+import { ReactNode } from "react";
 import { ContainerStyle } from "./style";
 
-interface props {
-  children: JSX.Element | ReactElement | ReactElement[];
+export interface propsContainer {
+  children: ReactNode;
   flexBasis?: string;
   padding?: string;
   background?: string;
@@ -15,6 +15,7 @@ interface props {
   borderRadius?: string;
   margin?: string;
   opacity?: string;
+  className?: string;
 
   resMargin?: string;
   resWidth?: string;
@@ -40,6 +41,7 @@ const Container = ({
   borderRadius,
   margin,
   opacity,
+  
 
   resAlign,
   resHeight,
@@ -49,7 +51,7 @@ const Container = ({
   resJustify,
   resFlexDirection,
   resDisplay,
-}: props) => {
+}: propsContainer) => {
   return (
     <ContainerStyle
       flexBasis={flexBasis}
@@ -64,6 +66,7 @@ const Container = ({
       borderRadius={borderRadius}
       margin={margin}
       opacity={opacity}
+     
 
       resAlign={resAlign}
       resHeight={resHeight}
