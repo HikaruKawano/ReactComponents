@@ -15,7 +15,7 @@ export interface propsStyleInput {
 
 
 export const StyleInput = styled.input.attrs<propsStyleInput>({
-    className: 'p-2.5 rounded-xl outline-1 outline-gray-950 text-gray-700 border-none mb-6'
+    className: 'p-2.5 rounded-xl outline-1 outline-gray-950 text-gray-200 border-none mb-6'
 })`
 
     &.inputSimple{

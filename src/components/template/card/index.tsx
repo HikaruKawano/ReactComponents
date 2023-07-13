@@ -2,10 +2,11 @@ import { ReactNode } from "react";
 import { Button, Container, Input, Label, Text } from "../../atom";
 import Image from "../../atom/image";
 import Link from "../../atom/link";
-import { propsContainer } from "../../atom/container";
 
-interface props extends propsContainer{
+
+interface props{
     children: ReactNode
+    className: string
 }
 
 const Card = {
@@ -18,7 +19,7 @@ const Card = {
     link: Link,
 }
 
-export const Template = {
+export const TemplateCard = {
     componets: Card,
 
     Card: (props: props) => {

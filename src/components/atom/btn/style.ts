@@ -24,7 +24,7 @@ export interface propsStyleBtn {
 
 
 export const Button = styled.button.attrs<propsStyleBtn>({
-    className: 'w-1/4 h-3  bg-gray-800 rounded-2xl border-none font-bold text-xs text-gray-700'
+    className: 'w-1/4 h-8  bg-gray-500 rounded-2xl border-none font-bold text-xs text-gray-200'
 })`
     width: ${(props) => props.width};
     height: ${(props) => props.height};

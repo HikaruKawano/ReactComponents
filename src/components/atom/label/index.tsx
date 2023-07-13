@@ -6,6 +6,7 @@ import { TextStyle, propsStyleLabel } from "./style";
 interface props extends propsStyleLabel {
   children: string | JSX.Element | React.ReactElement | ReactNode;
   className?: 'Email' | 'Password' | 'ConfirmPassoword';
+  props?: string
 }
 
 

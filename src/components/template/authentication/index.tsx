@@ -3,10 +3,13 @@ import { Button, Container, Input, Label } from "../../atom";
 import Form from "../../atom/form";
 import React from "react";
 
+
 interface props {
   children?: ReactNode;
   isEdit?: boolean;
+  className?: string;
 }
+
 
 const Auth = {
   Login: {
@@ -25,10 +28,10 @@ const Auth = {
   },
 };
 
-export const Template = {
+export const TemplateAuth = {
   Components: Auth.Login,
 
-  Login: ({ children, isEdit = false }: props) => {
+  Login: ({ children, isEdit = false, className }: props) => {
     let compEmail;
     let compEmailProps;
     let compPassword;
@@ -55,7 +58,7 @@ export const Template = {
     }
 
     return (
-      <Auth.Login.root>
+      <Auth.Login.root  className={className}>
         <Auth.Login.form id="" name="">
           <Auth.Login.Label props={compEmailProps}>
             {compEmail ? compEmail : "Email"}
@@ -72,7 +75,7 @@ export const Template = {
     );
   },
 
-  Register: ({ children, isEdit = false }: props) => {
+  Register: ({ children, isEdit = false , className}: props) => {
     let compEmail;
     let compEmailProps;
     let compPassword;
@@ -105,24 +108,24 @@ export const Template = {
     }
 
     return (
-      <Auth.Login.root>
-        <Auth.Login.form id="" name="">
-          <Auth.Login.Label props={compEmailProps}>
+      <Auth.Register.root  className={className}>
+        <Auth.Register.form id="" name="">
+          <Auth.Register.Label props={compEmailProps}>
             {compEmail ? compEmail : "Email"}
-          </Auth.Login.Label>
-          <Auth.Login.input />
-          <Auth.Login.Label props={compPasswordProps}>
+          </Auth.Register.Label>
+          <Auth.Register.input />
+          <Auth.Register.Label props={compPasswordProps}>
             {compPassword ? compPassword : "Senha"}
-          </Auth.Login.Label>
-          <Auth.Login.input />
-          <Auth.Login.Label props={compConfirmPasswordProps}>
+          </Auth.Register.Label>
+          <Auth.Register.input />
+          <Auth.Register.Label props={compConfirmPasswordProps}>
             {compConfirmPassword ? compConfirmPassword : "Confirmar senha"}
-          </Auth.Login.Label>
-          <Auth.Login.input />
+          </Auth.Register.Label>
+          <Auth.Register.input />
           {addChildren}
-          <Auth.Login.button>Enviar</Auth.Login.button>
-        </Auth.Login.form>
-      </Auth.Login.root>
+          <Auth.Register.button>Enviar</Auth.Register.button>
+        </Auth.Register.form>
+      </Auth.Register.root>
     );
   },
 };

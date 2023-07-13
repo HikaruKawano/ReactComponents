@@ -1,21 +1,7 @@
 /** @type {import('tailwindcss').Config} */
-
-  
-
-
 export default {
-
-
-  content: [
-    "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}",
-  ],
-  plugins: [],
-  mode: 'jit',
-  purge: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'],
+  content: [],
   presets: [],
-
-
   darkMode: 'media', // or 'class'
   theme: {
     accentColor: ({ theme }) => ({
@@ -1001,5 +987,6 @@ export default {
       50: '50',
     },
   },
+  plugins: [],
 }
 

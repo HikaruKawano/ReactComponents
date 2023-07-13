@@ -1,16 +1,15 @@
-import { Components } from "./components/atom";
-import { Template } from "./components/template/card";
+
+import { Template } from "./components/template";
+import 'tailwindcss/tailwind.css';
 
 
 
 function App() {
   return (
     <>
-      <Template.Card >
-        <Template.componets.text>
-          AAAAAAAAAA
-        </Template.componets.text>
-      </Template.Card>
+      <Template.Login className="white">
+        
+      </Template.Login>
     </>
   );
 }

@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
-import { TextStyle, propsStyleText } from "./style";
-import './style.css'
+import { TextStyle, propsStyleText } from "./style";  
 
 interface props extends propsStyleText {
   children: ReactNode;
